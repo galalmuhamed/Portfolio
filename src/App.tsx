@@ -30,6 +30,7 @@ const App = () => {
 
 	useEffect(() => {
 		getAllData();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const setNight = (mode: boolean) => {
