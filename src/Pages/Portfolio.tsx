@@ -12,7 +12,6 @@ import HoverVideoPlayer from 'react-hover-video-player';
 import { ChildPortfolio, ParentPortfolio } from '../Assets/animation/animation';
 import { DataContext } from '../DataContext';
 import { DataContextType } from '../types/types';
-import { apiImage } from '../api/api';
 const Portfolio = () => {
 	const { portfolios } = useContext(DataContext) as DataContextType;
 	return (

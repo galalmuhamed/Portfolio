@@ -21,7 +21,6 @@ import {
 import { MdOutlineDescription } from 'react-icons/md';
 import Description from '../Components/Description';
 import { DataContext } from '../DataContext';
-import { apiImage } from '../api/api';
 import { DataContextType } from '../types/types';
 const PortfolioPage = () => {
 	const { id } = useParams();

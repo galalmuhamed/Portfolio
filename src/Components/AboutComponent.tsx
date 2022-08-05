@@ -4,7 +4,6 @@ import { Container, Left, Right } from './styles/About.styled';
 import { ParentAbout, LeftAboutAnimate } from '../Assets/animation/animation';
 import { DataContext } from '../DataContext';
 import { DataContextType } from '../types/types';
-import { apiImage } from '../api/api';
 import TitleComponent from './TitleComponent';
 
 const AboutComponent = () => {
