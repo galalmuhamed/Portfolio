@@ -16,7 +16,7 @@ const AboutComponent = () => {
 		<Container variants={ParentAbout} initial="hidden" whileInView="show">
 			<Left>
 				<motion.img
-					src={apiImage + user?.img}
+					src={user?.img}
 					alt={user?.name as string}
 					variants={LeftAboutAnimate}
 				/>

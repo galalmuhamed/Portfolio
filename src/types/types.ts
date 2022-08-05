@@ -10,6 +10,7 @@ export interface UserDataType {
 	img: string;
 	coverPhoto: string;
 	description: string;
+	createdAt: Date;
 }
 
 export interface ProjectsDataType {
@@ -27,4 +28,5 @@ export interface ProjectsDataType {
 		youtube: string;
 		github: string;
 	};
+	createdAt: Date;
 }

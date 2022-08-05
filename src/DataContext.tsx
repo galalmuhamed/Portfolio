@@ -15,7 +15,7 @@ const DataProvider: FC<Props> = ({ children }) => {
 
 	const getAllData = async () => {
 		try {
-			const id = '62eb5a83ce1f8876bdfac200';
+			const id = '62ec7e63a594f2be9c66616d';
 			setIsLoading(true);
 			return Promise.all([api.get(`/user/${id}`), api.get('/portfolio')]).then(
 				([user, portfolios]) => {

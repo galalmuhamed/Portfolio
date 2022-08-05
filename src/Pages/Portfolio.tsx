@@ -18,48 +18,54 @@ const Portfolio = () => {
 	return (
 		<GlobalContainer>
 			<Container variants={ParentPortfolio} initial="hidden" animate="show">
-				{portfolios.map((elm, idx) => (
-					<Box key={idx} variants={ChildPortfolio}>
-						<>
-							<TitleContainer>
-								<div>
-									<BsCircleFill color="red" />
-									<BsCircleFill color="yellow" />
-									<BsCircleFill color="green" />
-								</div>
-								<p>
-									<BsLockFill />
-									<LinkTitle to={`/portfolio/${elm._id}`}>
-										{elm.title}
-									</LinkTitle>
-								</p>
-							</TitleContainer>
+				{portfolios
+					.sort(
+						(a, b) =>
+							Date.parse(b.createdAt as unknown as string) -
+							Date.parse(a.createdAt as unknown as string)
+					)
+					.map((elm, idx) => (
+						<Box key={idx} variants={ChildPortfolio}>
+							<>
+								<TitleContainer>
+									<div>
+										<BsCircleFill color="red" />
+										<BsCircleFill color="yellow" />
+										<BsCircleFill color="green" />
+									</div>
+									<p>
+										<BsLockFill />
+										<LinkTitle to={`/portfolio/${elm._id}`}>
+											{elm.title}
+										</LinkTitle>
+									</p>
+								</TitleContainer>
 
-							<VideoContainer to={`/portfolio/${elm._id}`}>
-								<HoverVideoPlayer
-									videoSrc={apiImage + elm.videoPreview}
-									pausedOverlay={
-										<img
-											src={apiImage + elm.thumbnail}
-											alt=""
-											style={{
-												// Make the image expand to cover the video's dimension
-												width: '100%',
-												height: '100%',
-												objectFit: 'cover',
-											}}
-										/>
-									}
-									loadingOverlay={
-										<div className="loading-overlay">
-											<div className="loading-spinner" />
-										</div>
-									}
-								/>
-							</VideoContainer>
-						</>
-					</Box>
-				))}
+								<VideoContainer to={`/portfolio/${elm._id}`}>
+									<HoverVideoPlayer
+										videoSrc={elm.videoPreview}
+										pausedOverlay={
+											<img
+												src={elm.thumbnail}
+												alt=""
+												style={{
+													// Make the image expand to cover the video's dimension
+													width: '100%',
+													height: '100%',
+													objectFit: 'cover',
+												}}
+											/>
+										}
+										loadingOverlay={
+											<div className="loading-overlay">
+												<div className="loading-spinner" />
+											</div>
+										}
+									/>
+								</VideoContainer>
+							</>
+						</Box>
+					))}
 			</Container>
 		</GlobalContainer>
 	);

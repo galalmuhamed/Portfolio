@@ -49,10 +49,7 @@ const PortfolioPage = () => {
 
 					<div>
 						<ImageContainer variants={LeftToRightProfilePage}>
-							<img
-								src={apiImage + user?.coverPhoto}
-								alt={user?.name as string}
-							/>
+							<img src={user?.coverPhoto} alt={user?.name as string} />
 						</ImageContainer>
 						<BoxTwo>
 							<Description
